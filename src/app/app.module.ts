@@ -16,6 +16,7 @@ import { InstockComponent } from './instock/instock.component';
 import { SigninComponent } from './signin/signin.component';
 import { CashierComponent } from './cashier/cashier.component';
 import { ConverterComponent } from './converter/converter.component';
+import { InsightComponent } from './insight/insight.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { ConverterComponent } from './converter/converter.component';
     InstockComponent,
     SigninComponent,
     CashierComponent,
-    ConverterComponent
+    ConverterComponent,
+    InsightComponent
   ],
   imports: [
     BrowserModule,

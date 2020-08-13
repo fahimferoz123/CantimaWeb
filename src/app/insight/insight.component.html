@@ -1,0 +1,229 @@
+<div class="row" style=" margin-top: 7%;">
+    <div class="col-lg-2 col-md-2">
+      <app-dcard></app-dcard>
+    </div>
+    
+    <div class="container col-lg-9 col-md-9" >
+
+        <!-- cards section -->
+        <section class="mt-lg-5">
+
+           
+            <div class="row">
+        
+                
+                <div class="col-xl-3 col-md-6 mb-r">
+        
+                    <!--Card-->
+                    <mdb-card cascade="true" class="cascading-admin-card">
+        
+                      
+                        <div class="admin-up">
+                            <mdb-icon far icon="money-bill-alt" class="success-color"></mdb-icon>
+                            <div class="data">
+                                <p>CASH SALES</p>
+                                <h4><strong>Rs 20000</strong></h4>
+                            </div>
+                        </div>
+                     
+        
+                      
+                        <mdb-card-body>
+                            <div class="progress">
+                                <div class="progress-bar bg-primary" role="progressbar" style="width: 25%" aria-valuenow="25"
+                                     aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            
+                            <p class="card-text">Better than last week (25%)</p>
+                        </mdb-card-body>
+                        
+        
+                    </mdb-card>
+                    <!--/.Card-->
+        
+                </div>
+                
+                <div class="col-xl-3 col-md-6 mb-r">
+        
+                    <!--Card-->
+                    <mdb-card cascade="true" class="cascading-admin-card">
+        
+                        
+                        <div class="admin-up">
+                            <mdb-icon fas icon="coins" class="warning-color"></mdb-icon>
+                            <div class="data">
+                                <p>CANTEEN CREDIT SALES</p>
+                                <h4><strong>Rs 15000</strong></h4>
+                            </div>
+                        </div>
+                        
+        
+                        
+                        <mdb-card-body>
+                            <div class="progress">
+                                <div class="progress-bar bg grey darken-2" role="progressbar" style="width: 25%"
+                                     aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            
+                            <p class="card-text">Worse than last week (25%)</p>
+                        </mdb-card-body>
+                        
+        
+                    </mdb-card>
+                    <!--/.Card-->
+        
+                </div>
+               
+                <div class="col-xl-3 col-md-6 mb-r">
+        
+                    <!--Card-->
+                    <mdb-card cascade="true" class="cascading-admin-card">
+        
+                        
+                        <div class="admin-up">
+                            <mdb-icon fas icon="chart-pie" class="light-blue lighten-1"></mdb-icon>
+                            <div class="data">
+                                <p>TRAFFIC</p>
+                                <h4><strong>20000</strong></h4>
+                            </div>
+                        </div>
+                                               
+                        <mdb-card-body>
+                            <div class="progress">
+                                <div class="progress-bar grey darken-2" role="progressbar" style="width: 75%" aria-valuenow="75"
+                                     aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>                            
+                            <p class="card-text">Worse than last week (75%)</p>
+                        </mdb-card-body>
+                       
+        
+                    </mdb-card>
+                    <!--/.Card-->
+        
+                </div>
+              
+                <div class="col-xl-3 col-md-6 mb-r">
+        
+                    <!--Card-->
+                    <mdb-card cascade="true" class="cascading-admin-card">
+        
+                       
+                        <div class="admin-up">
+                            <mdb-icon fas icon="exchange-alt" class="red accent-2"></mdb-icon>
+                            <div class="data">
+                                <p>CONVERTIONS</p>
+                                <h4><strong>200</strong></h4>
+                            </div>
+                        </div>
+                      
+                        <mdb-card-body>
+                            <div class="progress">
+                                <div class="progress-bar bg-primary" role="progressbar" style="width: 25%" aria-valuenow="25"
+                                     aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                           
+                            <p class="card-text">Better than last week (25%)</p>
+                        </mdb-card-body>
+                        >
+        
+                    </mdb-card>
+                    <!--/.Card-->
+        
+                </div>
+                
+        
+            </div>
+           
+        
+        </section>
+        <!-- card section  -->
+
+        <div class="row wow fadeIn mt-5">
+
+           
+            <div class="col-md-9 mb-4">
+        
+                <!--Card-->
+                <mdb-card>
+        
+                    
+                    <mdb-card-body>
+        
+                        <div style="display: block">
+                            <canvas mdbChart [chartType]="chart1Type" [datasets]="chartDatasets" [labels]="chartLabels1"
+                                    [colors]="chartColors" [options]="chartOptions"
+                                    [legend]="true">
+                            </canvas>
+                        </div>
+                    </mdb-card-body>
+        
+                </mdb-card>
+                <!--/.Card-->
+        
+            </div>
+            
+            <div class="col-md-3 mb-4">
+        
+            
+        
+                <!--Card-->
+                <mdb-card class="mb-4">
+        
+                    
+                    <mdb-card-body>
+        
+                        <!-- group links -->
+                        <div class="list-group list-group-flush">
+                            <a class="list-group-item list-group-item-action waves-effect">Sales
+                                <mdb-badge success="true" pill="true" class="pull-right">22%
+                                    <mdb-icon fas icon="arrow-up" class="ml-1"></mdb-icon>
+                                </mdb-badge>
+                            </a>
+                            <a class="list-group-item list-group-item-action waves-effect">Traffic
+                                <mdb-badge danger="true" pill="true" class="pull-right">5%
+                                    <mdb-icon fas icon="arrow-down" class="ml-1"></mdb-icon>
+                                </mdb-badge>
+                            </a>
+                            <a class="list-group-item list-group-item-action waves-effect">Orders
+                                <mdb-badge primary="true" pill="true" class="pull-right">14</mdb-badge>
+                            </a>
+                            <a class="list-group-item list-group-item-action waves-effect">Issues
+                                <span class="badge badge-primary badge-pill pull-right">123</span>
+                            </a>
+                            <a class="list-group-item list-group-item-action waves-effect">Messages
+                                <mdb-badge primary="true" pill="true" class="pull-right">8</mdb-badge>
+                            </a>
+                        </div>
+                       
+        
+                    </mdb-card-body>
+        
+                </mdb-card>
+                
+
+                 <!--Card-->
+                <mdb-card>
+
+                    
+                    <div class="card-header">Line chart</div>
+
+                    
+                    <mdb-card-body>
+
+                        <div style="display: block">
+                            <canvas mdbChart [chartType]="chart3Type" [datasets]="chartDatasetmonth" [labels]="chartLabels"
+                                    [colors]="chartColors" [options]="chartOptions"
+                                    [legend]="true">
+                            </canvas>
+                        </div>
+                    </mdb-card-body>
+
+                </mdb-card>
+                
+        
+            </div>
+            
+        
+        </div>
+
+    </div>
