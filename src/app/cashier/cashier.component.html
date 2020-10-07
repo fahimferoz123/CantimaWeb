@@ -69,7 +69,14 @@
                             <td>2</td>
                             <td>Rs 40.00</td>
                             <td>Rs 80.00</td>                                                   
-                        </tr>                   
+                        </tr> 
+                        <tr>
+                          <td>Cream Bun</td>
+                          <td>1355</td>
+                          <td>2</td>
+                          <td>Rs 30.00</td>
+                          <td>Rs 60.00</td>                                                   
+                      </tr>                   
                     </thead>                                      
                   </table>  
                   
@@ -169,7 +176,52 @@
 
                             </span>
                           </td>                         
-                    </tr>                   
+                    </tr>
+                    <tr>
+                      <td>123476</td>
+                      <td>1704098</td>
+                      <td>14/10/2020</td>
+                      <td>16:25</td>
+                      <td>Rs 500.00</td>
+                      <td>Cash</td>
+                      <td>Jhon</td>
+                      
+                      <td>
+                          <span class="table-edit">
+
+                            
+                            <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="relative waves-light" (click)="editModal.show()" mdbWavesEffect >Details</button>
+                            
+
+                            <div mdbModal #editModal="mdbModal" class="modal fade right" id="frameModalTop" tabindex="-1" role="dialog"
+                                aria-labelledby="myModalLabel" aria-hidden="true">
+                              <div class="modal-dialog modal-full-height modal-right" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header text-center">
+                                    <button type="button" class="close pull-right" aria-label="Close" (click)="editModal.hide()">
+                                      <span aria-hidden="true">×</span>
+                                    </button>
+                                    
+                                    <h4 class="modal-title w-100 font-weight-bold">Details</h4>
+                                    
+                                  </div>
+
+                                  <div class="modal-body mx-3">
+                                    <form class="border border-0 p-4" id="add-item">
+                                      
+                                        
+                                    
+                                  </form>
+                                  </div>
+                            
+                                 
+                                </div>
+                              </div>
+                            </div>
+
+                          </span>
+                        </td>                         
+                  </tr>                   
                 </thead>                                      
             </table>  
 
