@@ -17,6 +17,8 @@ import { SigninComponent } from './signin/signin.component';
 import { CashierComponent } from './cashier/cashier.component';
 import { ConverterComponent } from './converter/converter.component';
 import { InsightComponent } from './insight/insight.component';
+import { ComplaintComponent } from './complaint/complaint.component';
+
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { InsightComponent } from './insight/insight.component';
     SigninComponent,
     CashierComponent,
     ConverterComponent,
-    InsightComponent
+    InsightComponent,
+    ComplaintComponent
   ],
   imports: [
     BrowserModule,
