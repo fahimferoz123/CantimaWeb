@@ -1,0 +1,104 @@
+<p>complaint works!</p>
+<div class="row" style=" margin-top: 7%;">
+    <div class="col-lg-2 col-md-2">
+      <app-dcard></app-dcard>
+    </div>
+    <div class="container col-lg-9 col-md-9" >
+        <div>
+            <div class="col-md-1">
+              <h3>Customer Complaints</h3>
+            </div>
+            <br>
+                <div class="row justify-content-start" style="margin: 0px; padding: 0px;">            
+              </div>
+            <br>  
+        
+            <!--complaints table-->
+                <table class="table table-striped "  mdbTable hover='true' >
+                  <thead class="text-center" style="background-color: rgb(245, 245, 245)" >
+                      <tr >
+                      <th> Order ID</th>
+                      <th> User  ID</th>
+                      <th> Date</th>
+                      <th> Time</th>
+                      <th> Payment Type</th>
+                      <th> Complaint description</th>
+                      <th> Proofs/Evidence(Image)</th>
+                      
+                     
+                        <!--test data-->
+                      
+                      <tr>
+                          <td>123456</td>
+                          <td>1704090</td>
+                          <td>7/10/2020</td>
+                          <td>15:25</td>
+                          <td>Cash</td>
+                          <td>I bought a milk packet at 10.30 am from the UCSC canteen. But it was expired before 3 days  </td>
+                          <td><div><img src="../../../assets/Images\milk.jpg" width="100" height="100"></div></td>
+                       
+                          
+                          <td>
+                              <span class="table-edit">
+
+                                <div mdbModal #editModal="mdbModal" class="modal fade right" id="frameModalTop" tabindex="-1" role="dialog"
+                                    aria-labelledby="myModalLabel" aria-hidden="true">
+                                  <div class="modal-dialog modal-full-height modal-right" role="document">
+                                    <div class="modal-content">
+                                      <div class="modal-header text-center">
+                                        <button type="button" class="close pull-right" aria-label="Close" (click)="editModal.hide()">
+                                          <span aria-hidden="true">×</span>
+                                        </button>  
+                                      </div>
+  
+                                      <div class="modal-body mx-3">
+                                        <form class="border border-0 p-4" id="add-item">
+                                          
+                                           </form>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+  
+                              </span>
+                          </td>                         
+                      </tr>
+                      <tr>
+                        <td>123656</td>
+                          <td>1754090</td>
+                          <td>7/09/2020</td>
+                          <td>13:25</td>
+                          <td>CC</td>
+                          <td>I bought a watalappam at 5.30 pm from the UCSC canteen. But it was expired before 12 days  </td>
+                          <td><div><img src="../../../assets/Images\wata.jpg" width="100" height="100"></div></td>
+                          
+                          <td>
+                            <span class="table-edit">                          
+  
+                              <div mdbModal #editModal="mdbModal" class="modal fade right" id="frameModalTop" tabindex="-1" role="dialog"
+                                  aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-full-height modal-right" role="document">
+                                  <div class="modal-content">
+                                    <div class="modal-header text-center">
+                                      <button type="button" class="close pull-right" aria-label="Close" (click)="editModal.hide()">
+                                        <span aria-hidden="true">×</span>
+                                      </button>
+                                    </div>
+  
+                                    <div class="modal-body mx-3">
+                                      <form class="border border-0 p-4" id="add-item">
+                                      </form>
+                                  </div>
+                                 </div>
+                                </div>
+                              </div>
+                            </span>
+                          </td>                         
+                    </tr>                   
+                  </thead>                                      
+              </table>  
+     </div>
+  </div>
+  
+  
+            
