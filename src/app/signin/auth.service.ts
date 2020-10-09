@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { catchError, retry } from 'rxjs/operators';
 import { Router } from '@angular/router';
@@ -17,19 +17,40 @@ export class AuthService {
     this.http.post('http://3.223.72.19/api/staff/login', {
       "username": username,
       "password": password
-    }).subscribe({
+    }, { observe: 'response' }
+    ).subscribe({
       next: data => {
         // this.postId = data.id;
         console.log(data);
-        this.router.navigateByUrl('/instock');
+
+        if (data.status == 200) {
+          this.router.navigateByUrl('/instock');
+
+
+        } else {
+          // add a error message here
+
+        }
       },
       error: error => {
         // this.errorMessage = error.message;
-        console.error('There was an error!', error.status);
+        console.error('There was an error!', error);
+        // add a error message here
+
       }
     }
     )
 
 
   }
+  // loginFun(username: string, password: string) {
+  //   this.http.post('http://3.223.72.19/api/staff/login', {
+  //     "username": username,
+  //     "password": password
+  //   }).subscribe(res=>
+  //     console.log(res.json())
+  //   )
+
+
+  // }
 }
