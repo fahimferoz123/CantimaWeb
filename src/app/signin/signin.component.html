@@ -3,7 +3,7 @@
 <div class="container col-md-3 " style="margin-top: 9%;" >
            
 <!--form login -->
-    <form class="text-center border border-light p-5 gradient-card-header cloudy-knoxville-gradient">
+    <form [formGroup]="signInForm" class="text-center border border-light p-5 gradient-card-header cloudy-knoxville-gradient" (ngSubmit)="onSubmit()">
 
         
             <!--Header-->
@@ -23,10 +23,10 @@
             <img src="../../assets/Images\Logo\Cantima.png" class="img-fluid" alt="...">
         </div>
         <!-- Username -->
-        <input  id="Username" class="form-control mb-4" placeholder="Username">
+        <input  id="Username" class="form-control mb-4" placeholder="Username" formControlName = "username">
     
         <!-- Password -->
-        <input type="password" id="Password" class="form-control mb-4" placeholder="Password">
+        <input type="password" id="Password" class="form-control mb-4" placeholder="Password" formControlName = "password">
     
         <div class="d-flex justify-content-around">
             <div>
@@ -40,13 +40,16 @@
         </div>
     
         <!-- Sign in button -->
-        <button mdbBtn color="warning" block="true" class="my-4" type="submit" [routerLink]="['/instock']">Sign in</button>
+        <!-- <button mdbBtn color="warning" block="true" class="my-4" type="submit" [routerLink]="['/instock']">Sign in</button> -->
+
             
            
        
            
-        
+        <button mdbBtn color="warning" block="true" class="my-4" type="submit" [disabled]="!signInForm.valid">Sign in</button>
+
              
     </form>
+
   <!-- Default form login -->
 </div>

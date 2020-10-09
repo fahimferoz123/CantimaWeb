@@ -18,6 +18,7 @@ import { CashierComponent } from './cashier/cashier.component';
 import { ConverterComponent } from './converter/converter.component';
 import { InsightComponent } from './insight/insight.component';
 import { ComplaintComponent } from './complaint/complaint.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { ComplaintComponent } from './complaint/complaint.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     MDBBootstrapModule.forRoot(),
     AppRoutingModule,
