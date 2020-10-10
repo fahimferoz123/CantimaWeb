@@ -179,30 +179,34 @@
                   
 
                   <div class="modal-body mx-3">
-                    <form class="border border-0 p-4" id="add-item">
+                    <form [formGroup]="addNewItemForm" class="border border-0 p-4" id="add-item">
+
+                      <div>                       
+                        <input type="text" id="textInput" class="form-control mb-4" placeholder="Product ID" formControlName="id">
+                    </div>
                       
                         <div>                       
-                            <input type="text" id="textInput" class="form-control mb-4" placeholder="Product Name">
+                            <input type="text" id="textInput" class="form-control mb-4" placeholder="Product Name" formControlName="name">
                         </div>
                         <div class="input-group mb-2 mr-sm-2">
                           <div class="input-group-prepend">
                             <div class="input-group-text">Rs.</div>
                           </div>
-                          <input mdbInput type="number" class="form-control py-0" min="1" id="price"  placeholder="Price">
+                          <input mdbInput type="number" class="form-control py-0" min="1" id="price"  placeholder="Price" formControlName="price">
                         </div>
                       
                       <select class="browser-default custom-select mb-4" id="select">
-                          <option value="" disabled="" selected="">Choose the category</option>
-                          <option value="1">Short Eats</option>
-                          <option value="2">Rice & Curry</option>
-                          <option value="3">Beverages</option>
+                          <option value="" disabled="" selected="" formControlName="category">Choose the category</option>
+                          <option value="0">Short Eats</option>
+                          <option value="1">Rice & Curry</option>
+                          <option value="2">Beverages</option>
                           <option value="3">Deserts</option>
                       </select>
                       <select class="browser-default custom-select mb-4" id="select">
-                        <option value="" disabled="" selected="">Menu time</option>
-                        <option value="1">Breakfirst (till 11a.m)</option>
-                        <option value="2">Lunch (11a.m-3p.m)</option>
-                        <option value="3">Evening (after 3p.m)</option>
+                        <option value="" disabled="" selected="" formControlName="time">Menu time</option>
+                        <option value="0">Breakfirst (till 11a.m)</option>
+                        <option value="1">Lunch (11a.m-3p.m)</option>
+                        <option value="2">Evening (after 3p.m)</option>
                         <option value="3">All Day</option>
                       </select>
                 
@@ -215,12 +219,12 @@
                     
                         
                               <div class="custom-control custom-checkbox mb-3">
-                                  <input type="checkbox" class="custom-control-input" id="customControlValidation1" required>
+                                  <input type="checkbox" class="custom-control-input" id="customControlValidation1" required formControlName="veg">
                                   <label class="custom-control-label" for="customControlValidation1">Vegetarian</label>                               
                               </div>
                         
                     
-                      <textarea id="textarea" class="form-control mb-4" placeholder="Description"></textarea>
+                      <textarea id="textarea" class="form-control mb-4" placeholder="Description" formControlName="des"></textarea>
                     
                   </form>
                   </div>
@@ -231,7 +235,7 @@
                   
                   
                   <div class="modal-footer d-flex justify-content-center">
-                    <button mdbBtn color="warning" class="waves-light" mdbWavesEffect>Add Item</button>
+                    <button mdbBtn color="warning" class="waves-light" mdbWavesEffect type="submit" [disabled]="!addNewItemForm.valid" >Add Item</button>
                   </div>
                 </div>
               </div>
