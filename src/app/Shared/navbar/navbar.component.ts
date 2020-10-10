@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { from } from 'rxjs';
 import { StartshopService } from './startshop.service';
 
+import { NavbarService} from './navbar.service';
+
 @Component({
   selector: 'app-navbar',
   templateUrl: './navbar.component.html',
