@@ -34,7 +34,7 @@ export class InstockComponent implements OnInit {
 
   checkIsVeg() {
     this.isVeg = !this.isVeg;
-}
+  }
 
 
   onFormSubmit() {
@@ -45,6 +45,7 @@ export class InstockComponent implements OnInit {
     const mealTime = this.addNewItemForm.get('mealTime').value;
     const isVeg = this.addNewItemForm.get('veg').value;
     const desc = this.addNewItemForm.get('des').value;
+    // console.log(isVeg);
     this.instockService.addItem(id, name, price, category, mealTime, isVeg, desc);
   }
 

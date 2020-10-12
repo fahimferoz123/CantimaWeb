@@ -13,24 +13,27 @@ export class InstockService {
   constructor(private http: HttpClient, private router: Router) { }
 
   addItem(id: string, name: string, price: number, category: number, mealTime: number, isVeg: boolean, description: string) {
-    this.http.post('http://3.223.72.19/api/staff/addItem', {
-      'itemId': id,
+    this.http.post('http://3.223.72.19/api/item/add', {
+      'id': id,
       'name': name,
       'price': price,
       'category': category,
-      'mealTime': mealTime,
-      'isVeg': isVeg,
-      'description': description,
+      'time': mealTime,
+      'image': "abcd",
+      'veg': isVeg,
+      'des': description,
     }, { observe: 'response' }
     ).subscribe({
       next: data => {
         console.log(data);
 
         if (data.status === 200) {
-          this.router.navigateByUrl('/instock');
+          // this.router.navigateByUrl('/instock');
+          console.log("item added successfully");
 
         } else {
           // add a error message here
+          console.log("error occured");
 
         }
       },
