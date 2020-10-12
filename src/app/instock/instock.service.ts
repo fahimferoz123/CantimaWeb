@@ -8,24 +8,26 @@ import { Router } from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
-export class AuthService {
+export class InstockService {
 
   constructor(private http: HttpClient, private router: Router) { }
 
-
-  loginFun(username: string, password: string) {
-    this.http.post('http://3.223.72.19/api/staff/login', {
-      "username": username,
-      "password": password
+  addItem(id: string, name: string, price: number, category: number, mealTime: number, isVeg: boolean, description: string) {
+    this.http.post('http://3.223.72.19/api/staff/addItem', {
+      'itemId': id,
+      'name': name,
+      'price': price,
+      'category': category,
+      'mealTime': mealTime,
+      'isVeg': isVeg,
+      'description': description,
     }, { observe: 'response' }
     ).subscribe({
       next: data => {
-        // this.postId = data.id;
         console.log(data);
 
         if (data.status === 200) {
           this.router.navigateByUrl('/instock');
-
 
         } else {
           // add a error message here
@@ -43,14 +45,5 @@ export class AuthService {
 
 
   }
-  // loginFun(username: string, password: string) {
-  //   this.http.post('http://3.223.72.19/api/staff/login', {
-  //     "username": username,
-  //     "password": password
-  //   }).subscribe(res=>
-  //     console.log(res.json())
-  //   )
-
-
-  // }
 }
+
