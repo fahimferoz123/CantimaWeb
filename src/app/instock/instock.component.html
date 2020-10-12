@@ -179,8 +179,10 @@
                 
 
                 <div class="modal-body mx-3">
-                  <form [formGroup]="addNewItemForm" class="border border-0 p-4" id="add-item">
-                    
+                  <form [formGroup]="addNewItemForm" class="border border-0 p-4" id="add-item" (ngSubmit)="onFormSubmit()">
+                    <div>                       
+                      <input formControlName="id" type="text" id="textInput" class="form-control mb-4" placeholder="Product ID">
+                  </div>
                       <div>                       
                           <input formControlName="name" type="text" id="textInput" class="form-control mb-4" placeholder="Product Name">
                       </div>
@@ -213,14 +215,22 @@
                     </div>
                   
                       
+                    <!-- <input formControlName="veg" type="checkbox" class="custom-control-input"  > -->
+
                             <div class="custom-control custom-checkbox mb-3">
-                                <input formControlName="veg" type="checkbox" class="custom-control-input" id="customControlValidation1" required>
-                                <label class="custom-control-label" for="customControlValidation1">Vegetarian</label>                               
+                                <!-- <input formControlName="veg" type="checkbox" class="custom-control-input"  > -->
+                                <!-- <label class="custom-control-label" for="customControlValidation1">Vegetarian</label>     
+                                                           -->
+
+                                                           <input type="checkbox" name="veg" formControlName="veg">
+                                                           <p style="display: inline-block;margin-left: 10px;">Vegetarian</p>
                             </div>
                       
                   
-                    <textarea formControlName="des" id="textarea" class="form-control mb-4" placeholder="Description"></textarea>
-                  
+                    <textarea formControlName="des" id="textarea" class="form-control mb-4" placeholder="Description" ></textarea>
+                    <div class="modal-footer d-flex justify-content-center">
+                      <button mdbBtn color="warning" class="waves-light" mdbWavesEffect type="submit" [disabled]="!addNewItemForm.valid">Add Item</button>
+                    </div>
                 </form>
                 </div>
 
@@ -229,9 +239,7 @@
                   </button>
                 
                 
-                <div class="modal-footer d-flex justify-content-center">
-                  <button mdbBtn color="warning" class="waves-light" mdbWavesEffect type="submit" [disabled]="!addNewItemForm.valid">Add Item</button>
-                </div>
+             
               </div>
             </div>
           </div>
