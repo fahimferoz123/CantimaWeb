@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { InstockService } from './instock.service';
 
 @Component({
   selector: 'app-instock',
@@ -9,22 +10,21 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class InstockComponent implements OnInit {
 
   submitted = false;
-  // item: InStock;
-
   isVeg = false;
+
   addNewItemForm = new FormGroup({
-    id: new FormControl(0, [Validators.required]),
+    id: new FormControl('', [Validators.required]),
     name: new FormControl('', [Validators.required]),
     price: new FormControl(0, [Validators.required]),
     category: new FormControl(0, [Validators.required]),
     // image: new FormControl('', [Validators.required]),
     mealTime: new FormControl(0, [Validators.required]),
-    veg: new FormControl(false, [Validators.required]),
+    veg: new FormControl(this.isVeg, [Validators.required]),
     des: new FormControl('', [Validators.required]),
 
   });
 
-  constructor() { }
+  constructor(private instockService: InstockService) { }
 
 
 
@@ -34,13 +34,19 @@ export class InstockComponent implements OnInit {
 
   checkIsVeg() {
     this.isVeg = !this.isVeg;
-    console.log(this.isVeg);
 }
 
-  onSubmit() {
-    console.log(this.addNewItemForm.value);
-}
 
+  onFormSubmit() {
+    const id = this.addNewItemForm.get('id').value;
+    const name = this.addNewItemForm.get('name').value;
+    const price = this.addNewItemForm.get('price').value;
+    const category = this.addNewItemForm.get('category').value;
+    const mealTime = this.addNewItemForm.get('mealTime').value;
+    const isVeg = this.addNewItemForm.get('veg').value;
+    const desc = this.addNewItemForm.get('des').value;
+    this.instockService.addItem(id, name, price, category, mealTime, isVeg, desc);
+  }
 
   // productName: String;
   // price: String;
@@ -50,6 +56,9 @@ export class InstockComponent implements OnInit {
   // description: String;
 
   addItem() {
+
     // Code this @dulaj
- }
+
+  }
+
 }

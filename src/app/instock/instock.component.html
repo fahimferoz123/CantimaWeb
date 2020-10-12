@@ -175,11 +175,11 @@
         <div class="modal-header text-center">
           <h4 class="modal-title w-100 font-weight-bold">Add New Item</h4>
         </div>
-
-
         <div class="modal-body mx-3">
-          <form [formGroup]="addNewItemForm" class="border border-0 p-4" id="add-item">
-
+          <form [formGroup]="addNewItemForm" class="border border-0 p-4" id="add-item" (ngSubmit)="onFormSubmit()">
+            <div>
+              <input formControlName="id" type="text" id="textInput" class="form-control mb-4" placeholder="Product ID">
+            </div>
             <div>
               <input formControlName="name" type="text" id="textInput" class="form-control mb-4"
                 placeholder="Product Name">
@@ -191,7 +191,6 @@
               <input formControlName="price" mdbInput type="number" class="form-control py-0" min="1" id="price"
                 placeholder="Price">
             </div>
-
             <select formControlName="category" class="browser-default custom-select mb-4" id="select">
               <option value="" disabled="" selected="">Choose the category</option>
               <option value="0">Short Eats</option>
@@ -205,41 +204,34 @@
               <option value="1">Lunch (11a.m-3p.m)</option>
               <option value="2">Evening (after 3p.m)</option>
             </select>
-
-            <div class="input-group mb-4">
+            <!-- <div class="input-group mb-4">
               <div class="custom-file">
                 <input accept=".png,.jpg" type="file" class="custom-file-input" id="fileInput"
                   aria-describedby="fileInput" multiple>
                 <label class="custom-file-label" for="fileInput">Select Images</label>
               </div>
-            </div>
+            </div> -->
 
 
             <div class="custom-control custom-checkbox mb-3">
-              <!-- <input formControlName="veg" type="checkbox" class="custom-control-input" (change)="checkIsVeg($event)"
-                id="customControlValidation1"> -->
-
-              <input type='checkbox' formControlName='veg' [checked]='checkIsVeg()'>
-
-              <!-- <label class="custom-control-label" for="customControlValidation1">Vegetarian</label> -->
+              <input type="checkbox" name="veg" formControlName="veg" (click)="checkIsVeg()">
+              <p style="display: inline-block;margin-left: 10px;">Vegetarian</p>
             </div>
-
 
             <textarea formControlName="des" id="textarea" class="form-control mb-4"
               placeholder="Description"></textarea>
 
+            <div class="modal-footer d-flex justify-content-center">
+              <button mdbBtn color="warning" class="waves-light" mdbWavesEffect type="submit"
+                [disabled]="!addNewItemForm.valid">Add Item</button>
+            </div>
+
           </form>
         </div>
-
         <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame.hide()">
           <span aria-hidden="true">&times;</span>
         </button>
-
-
-        <div class="modal-footer d-flex justify-content-center">
-          <button mdbBtn color="warning" class="waves-light" mdbWavesEffect type="submit"
-            [disabled]="!addNewItemForm.valid" (click)="onSubmit()">Add Item</button>
-        </div>
       </div>
     </div>
   </div>
+</div>
