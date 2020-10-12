@@ -9,13 +9,15 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class InstockComponent implements OnInit {
 
   submitted = false;
+  // item: InStock;
 
+  isVeg = false;
   addNewItemForm = new FormGroup({
     id: new FormControl(0, [Validators.required]),
     name: new FormControl('', [Validators.required]),
     price: new FormControl(0, [Validators.required]),
     category: new FormControl(0, [Validators.required]),
-    image: new FormControl('', [Validators.required]),
+    // image: new FormControl('', [Validators.required]),
     mealTime: new FormControl(0, [Validators.required]),
     veg: new FormControl(false, [Validators.required]),
     des: new FormControl('', [Validators.required]),
@@ -25,10 +27,19 @@ export class InstockComponent implements OnInit {
   constructor() { }
 
 
+
   ngOnInit(): void {
-    
+
   }
 
+  checkIsVeg() {
+    this.isVeg = !this.isVeg;
+    console.log(this.isVeg);
+}
+
+  onSubmit() {
+    console.log(this.addNewItemForm.value);
+}
 
 
   // productName: String;
@@ -39,8 +50,6 @@ export class InstockComponent implements OnInit {
   // description: String;
 
   addItem() {
-    //Code this @dulaj
- 
-  }
-
+    // Code this @dulaj
+ }
 }
