@@ -135,7 +135,6 @@ export class InstockComponent implements OnInit {
     console.log(itemId);
     this.instockService.deleteItem(itemId);
 
-    //add a alert box here asking permisson to delete
   }
 
 }

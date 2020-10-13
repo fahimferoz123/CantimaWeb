@@ -85,9 +85,37 @@
 
                   <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="relative waves-light"
                     (click)="editModal.show()" (click)="getToEdit(item)" mdbWavesEffect>Edit</button>
-                  <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="my-0" (click)="deleteItem(item.id)">
+                  <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="my-0"
+                    (click)="deleteModal.show()" mdbWavesEffect>
                     <mdb-icon fas icon="trash"></mdb-icon>
                   </button>
+
+                  <!-- item delete confirmation dialog box -->
+                  <div mdbModal #deleteModal="mdbModal" class="modal fade" tabindex="-1" role="dialog"
+                    aria-labelledby="myBasicModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <button type="button" class="close pull-right" aria-label="Close"
+                            (click)="deleteModal.hide()">
+                            <span aria-hidden="true">×</span>
+                          </button>
+                          <h3 class="modal-title w-100" id="myModalLabel">Are you sure you want to delete this item ?
+                          </h3>
+                        </div>
+
+                        <div class="modal-footer">
+                          <button type="button" mdbBtn color="secondary" class="waves-light" aria-label="Close"
+                            (click)="deleteModal.hide()" mdbWavesEffect>Cancel</button>
+                          <button type="button" mdbBtn color="primary" (click)="deleteItem(item.id)"
+                            (click)="deleteModal.hide()" class="relative waves-light" mdbWavesEffect>Delete</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+
+
 
                   <div mdbModal #editModal="mdbModal" class="modal fade right" id="frameModalTop" tabindex="-1"
                     role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -131,7 +159,7 @@
                             </select>
 
                             <!-- <div class="input-group mb-4"> -->
-                              <!-- <div class="custom-file">
+                            <!-- <div class="custom-file">
                                 <input type="file" class="custom-file-input" id="fileInput" aria-describedby="fileInput"
                                   multiple>
                                 <label class="custom-file-label" for="fileInput">Select Images</label>
@@ -145,8 +173,8 @@
                             <textarea id="textarea" formControlName="des" class="form-control mb-4"
                               placeholder="Description"></textarea>
                             <div class="modal-footer d-flex justify-content-center">
-                              <button mdbBtn color="warning" class="waves-light" mdbWavesEffect [disabled] = "!editItemForm.valid"
-                                (click)="editItem(item.id)">Save Item</button>
+                              <button mdbBtn color="warning" class="waves-light" mdbWavesEffect
+                                [disabled]="!editItemForm.valid" (click)="editItem(item.id)">Save Item</button>
                             </div>
                           </form>
                         </div>

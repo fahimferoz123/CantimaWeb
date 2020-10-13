@@ -19,7 +19,7 @@ export class InstockService {
       'price': price,
       'category': category,
       'time': mealTime,
-      'image': "abcd",
+      'image': "abczd",
       'veg': isVeg,
       'des': description,
     }, { observe: 'response' }
