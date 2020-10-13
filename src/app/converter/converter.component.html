@@ -161,41 +161,41 @@
 
     <div mdbModal #frame="mdbModal" class="modal fade right" id="frameModalTop" tabindex="-1" role="dialog"
     aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog " role="document">
-    <div class="modal-content">
-    <div class="modal-header text-center">
-        <h4 class="modal-title w-100 font-weight-bold">Convert Credits</h4>
-    </div>
+      <div class="modal-dialog " role="document">
+         <div class="modal-content">
+            <div class="modal-header text-center">
+                 <h4 class="modal-title w-100 font-weight-bold">Convert Credits</h4>
+            </div>
     
 
-    <div class="modal-body mx-3">
-        <form class="border border-0 p-4" id="add-item">
-        
-            <div>                       
-                <input type="text" id="textInput" class="form-control mb-4" placeholder="UserID">
+            <div class="modal-body mx-3">
+                <form class="border border-0 p-4" id="add-item">
+                
+                    <div>                       
+                        <input type="text" id="textInput" class="form-control mb-4" placeholder="UserID">
+                    </div>
+                    
+                    <div class="input-group mb-2 mr-sm-2">
+                    <div class="input-group-prepend">
+                        <div class="input-group-text">Rs.</div>
+                    </div>
+                    <input mdbInput type="number" class="form-control py-0" min="1" id="price"  placeholder="Amount">
+                    </div>
+                      
+                
+                </form>
             </div>
-            
-            <div class="input-group mb-2 mr-sm-2">
-            <div class="input-group-prepend">
-                <div class="input-group-text">Rs.</div>
-            </div>
-            <input mdbInput type="number" class="form-control py-0" min="1" id="price"  placeholder="Amount">
-            </div>
-               
-        
-    </form>
-    </div>
 
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame.hide()">
-        <span aria-hidden="true">&times;</span>
-        </button>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame.hide()">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        
     
-    
-    <div class="modal-footer d-flex justify-content-center">
-        <button mdbBtn color="warning" class="waves-light " (click)="confirmModal.show()" mdbWavesEffect>Confirm</button>
-    </div>
-    </div>
-    </div>
+            <div class="modal-footer d-flex justify-content-center">
+                <button mdbBtn color="warning" class="waves-light " (click)="confirmModal.show()" mdbWavesEffect>Confirm</button>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- confirm Model -->

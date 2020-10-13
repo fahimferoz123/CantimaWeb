@@ -55,9 +55,9 @@
               <th> Product Code</th>
               <th> Product Name</th>
               <th> Price</th>
-              <th> Availability</th>
-              <th> Rating</th>
-              <th> Quantity</th>
+              <th> Food Type</th>
+              <th> Time</th>
+              
               <th> </th>
             </tr>
 
@@ -68,17 +68,9 @@
               <td>{{item.id}}</td>
               <td>{{item.name}}</td>
               <td>Rs {{item.price}}</td>
-              <td>
-
-                <label class="switch">
-                  <input type="checkbox" checked>
-                  <span class="slider round"></span>
-                  <span class="absolute-no">NO</span>
-                </label>
-
-              </td>
-              <td>90%</td>
-              <td>23/80</td>
+              <td> Short Eats </td>
+              <td> Breakfast </td>
+              
               <td>
                 <span class="table-edit">
 
@@ -88,6 +80,50 @@
                   <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="my-0" (click)="deleteItem(item.id)">
                     <mdb-icon fas icon="trash"></mdb-icon>
                   </button>
+                  <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="relative waves-light" (click)="qtyModal.show()" mdbWavesEffect >
+                    <mdb-icon fas icon="angle-double-right"></mdb-icon>
+                  </button>
+
+                  <!-- add to showcase modal  -->
+
+                  <div mdbModal #qtyModal="mdbModal" class="modal fade right" id="frameModalTop" tabindex="-1" role="dialog"
+                  aria-labelledby="qtyModal" aria-hidden="true">
+                  <div class="modal-dialog " role="document">
+                      <div class="modal-content">
+                          <div class="modal-header text-center">
+                              <h4 class="modal-title w-100 font-weight-bold">Add to Showcase</h4>
+                          </div>
+                  
+
+                          <div class="modal-body mx-3">
+                              <form class="border border-0 p-4" id="add-item">
+                              
+                                 
+                                  
+                                  <div class="input-group mb-2 mr-sm-2">
+                                  <div class="input-group-prepend">
+                                      <div class="input-group-text">Quantity</div>
+                                  </div>
+                                  <input mdbInput type="number" class="form-control py-0" min="1" id="price"  placeholder="Amount">
+                                  </div>
+                                  
+                              
+                              </form>
+                          </div>
+
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="qtyModal.hide()">
+                          <span aria-hidden="true">&times;</span>
+                          </button>
+                      
+                  
+                          <div class="modal-footer d-flex justify-content-center">
+                              <button mdbBtn color="warning" class="waves-light " (click)="qtyModal.hide()" mdbWavesEffect>Add to Showcase</button>
+                      </div>
+                      </div>
+                  </div>
+                  </div>                 
+
+                  <!-- edit modal -->
 
                   <div mdbModal #editModal="mdbModal" class="modal fade right" id="frameModalTop" tabindex="-1"
                     role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
