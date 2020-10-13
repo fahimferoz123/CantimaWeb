@@ -103,10 +103,10 @@
                           </div>
   
                           <div class="modal-body mx-3">
-                            <form class="border border-0 p-4" id="add-item">
+                            <form class="border border-0 p-4" id="add-item" >
   
                               <div>
-                                <input type="text" id="textInput" class="form-control mb-4" placeholder="Product Name">
+                                <input type="text" id="textInput" class="form-control mb-4" placeholder="Product Name"  name = "itemname" [value]=item.name>
                               </div>
                               <div class="input-group mb-2 mr-sm-2">
                                 <div class="input-group-prepend">
@@ -118,17 +118,17 @@
   
                               <select class="browser-default custom-select mb-4" id="select">
                                 <option value="" disabled="" selected="">Choose the category</option>
-                                <option value="1">Short Eats</option>
-                                <option value="2">Rice & Curry</option>
-                                <option value="3">Beverages</option>
+                                <option value="0">Short Eats</option>
+                                <option value="1">Rice & Curry</option>
+                                <option value="2">Beverages</option>
                                 <option value="3">Deserts</option>
                               </select>
                               <select class="browser-default custom-select mb-4" id="select">
                                 <option value="" disabled="" selected="">Menu time</option>
-                                <option value="1">Breakfirst (till 11a.m)</option>
-                                <option value="2">Lunch (11a.m-3p.m)</option>
-                                <option value="3">Evening (after 3p.m)</option>
-                                <option value="3">All Day</option>
+                                <option value="0">Breakfirst (till 11a.m)</option>
+                                <option value="1">Lunch (11a.m-3p.m)</option>
+                                <option value="2">Evening (after 3p.m)</option>
+                                <!-- <option value="3">All Day</option> -->
                               </select>
   
                               <div class="input-group mb-4">
@@ -147,13 +147,14 @@
                               </div>
   
                               <textarea id="textarea" class="form-control mb-4" placeholder="Description"></textarea>
+                               <div class="modal-footer d-flex justify-content-center">
+                            <button mdbBtn color="warning" class="waves-light" mdbWavesEffect (click)="editItem(item.id)">Save Item</button>
+                          </div>
   
                             </form>
                           </div>
   
-                          <div class="modal-footer d-flex justify-content-center">
-                            <button mdbBtn color="warning" class="waves-light" mdbWavesEffect>Save Item</button>
-                          </div>
+                         
                         </div>
                       </div>
                     </div>

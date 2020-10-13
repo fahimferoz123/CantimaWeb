@@ -18,6 +18,28 @@ export class InstockComponent implements OnInit {
   allItemsObservable: Observable<Item[]>;
 
 
+  id: number;
+  name: string;
+  price: number;
+  category: number;
+  time: number;
+  veg: boolean;
+  des: string;
+
+
+
+  editItemForm = new FormGroup({
+    name: new FormControl('', [Validators.required]),
+    price: new FormControl(0, [Validators.required]),
+    category: new FormControl(0, [Validators.required]),
+    // image: new FormControl('', [Validators.required]),
+    time: new FormControl(0, [Validators.required]),
+    veg: new FormControl(this.isVeg, [Validators.required]),
+    des: new FormControl('', [Validators.required]),
+
+  });
+
+
 
   addNewItemForm = new FormGroup({
     id: new FormControl('', [Validators.required]),
@@ -88,11 +110,9 @@ export class InstockComponent implements OnInit {
   // menuItem: String;
   // isVegetarian: boolean;
   // description: String;
-
-  addItem() {
-
-    // Code this @dulaj
-
+  editItem(itemID) {
+    console.log(itemID);
+    console.log(this.name);
   }
 
 
