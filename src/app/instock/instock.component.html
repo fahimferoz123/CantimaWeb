@@ -85,7 +85,7 @@
 
                   <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="relative waves-light"
                     (click)="editModal.show()" (click)="getToEdit(item)" mdbWavesEffect>Edit</button>
-                  <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="my-0">
+                  <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="my-0" (click)="deleteItem(item.id)">
                     <mdb-icon fas icon="trash"></mdb-icon>
                   </button>
 

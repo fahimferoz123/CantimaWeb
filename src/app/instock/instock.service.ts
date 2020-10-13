@@ -86,5 +86,34 @@ export class InstockService {
 
 
   }
+
+
+  deleteItem(id: string) {
+    this.http.delete('http://3.223.72.19/api/item/' + id, { observe: 'response' }
+    ).subscribe({
+      next: data => {
+        console.log(data);
+
+        if (data.status === 200) {
+          // this.router.navigateByUrl('/instock');
+          console.log("item deleted successfully");
+
+        } else {
+          // add a error message here
+          console.log("error occured");
+
+        }
+      },
+      error: error => {
+        // this.errorMessage = error.message;
+        console.error('There was an error!', error);
+        // add a error message here
+
+      }
+    }
+    );
+
+
+  }
 }
 
