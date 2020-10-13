@@ -8,8 +8,8 @@ import { ConverterComponent } from './converter/converter.component';
 import { InsightComponent } from './insight/insight.component';
 import { ComplaintComponent} from './complaint/complaint.component';
 
-    const routes: Routes = [
-        
+const routes: Routes = [
+
         { path: 'instock',        component: InstockComponent },
         { path: 'signin',         component: SigninComponent },
         { path: 'cashier',        component: CashierComponent},
@@ -17,10 +17,9 @@ import { ComplaintComponent} from './complaint/complaint.component';
         { path: 'insight',        component: InsightComponent},
         { path: 'complaint',      component: ComplaintComponent},
 
-           
     ];
 
-    @NgModule({
+@NgModule({
         imports: [
             RouterModule.forRoot(routes)
         ],
@@ -29,4 +28,4 @@ import { ComplaintComponent} from './complaint/complaint.component';
         ],
         declarations: []
     })
-    export class AppRoutingModule { }
+export class AppRoutingModule { }

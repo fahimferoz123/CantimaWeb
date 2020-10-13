@@ -23,7 +23,7 @@ export class AuthService {
         // this.postId = data.id;
         console.log(data);
 
-        if (data.status == 200) {
+        if (data.status === 200) {
           this.router.navigateByUrl('/instock');
 
 
@@ -39,7 +39,7 @@ export class AuthService {
 
       }
     }
-    )
+    );
 
 
   }
