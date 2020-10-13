@@ -105,20 +105,20 @@
                                   <div class="input-group-prepend">
                                       <div class="input-group-text">Quantity</div>
                                   </div>
-                                  <input mdbInput type="number" class="form-control py-0" min="1" id="price"  placeholder="Amount">
+                                  <input mdbInput type="number" class="form-control py-0" min="1" id="price"  placeholder="Amount" [(ngModel)]="newItemQty" name="itemQty">
                                   </div>
                                   
                               
                               </form>
                           </div>
 
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="qtyModal.hide()">
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="qtyModal.hide() ">
                           <span aria-hidden="true">&times;</span>
                           </button>
                       
                   
                           <div class="modal-footer d-flex justify-content-center">
-                              <button mdbBtn color="warning" class="waves-light " (click)="qtyModal.hide()" mdbWavesEffect>Add to Showcase</button>
+                              <button mdbBtn color="warning" class="waves-light " (click)="addToShowCase(item.id)" mdbWavesEffect>Add to Showcase</button>
                       </div>
                       </div>
                   </div>

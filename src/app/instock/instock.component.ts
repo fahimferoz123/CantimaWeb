@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
@@ -7,7 +8,8 @@ import { InstockService } from './instock.service';
 @Component({
   selector: 'app-instock',
   templateUrl: './instock.component.html',
-  styleUrls: ['./instock.component.scss']
+  styleUrls: ['./instock.component.scss'],
+
 })
 export class InstockComponent implements OnInit {
 
@@ -16,6 +18,8 @@ export class InstockComponent implements OnInit {
 
   allItems: Array<Item> = [];
   allItemsObservable: Observable<Item[]>;
+
+  newItemQty: number = 0; //this is used when adding items to the showcase
 
 
   id: number;
@@ -135,6 +139,18 @@ export class InstockComponent implements OnInit {
     console.log(itemId);
     this.instockService.deleteItem(itemId);
 
+  }
+
+
+  addToShowCase(itemId: number) {
+    // this.qtyModal.hide();
+    console.log(itemId);
+    console.log(this.newItemQty);
+    this.instockService.addNewItemToShowCase(
+      itemId,
+      this.newItemQty,
+    );
+    this.newItemQty = 0;
   }
 
 }

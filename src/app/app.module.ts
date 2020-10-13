@@ -20,6 +20,7 @@ import { InsightComponent } from './insight/insight.component';
 import { ComplaintComponent } from './complaint/complaint.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ShowcaseComponent } from './showcase/showcase.component';
+import { DatePipe } from '@angular/common';
 
 
 
@@ -46,7 +47,10 @@ import { ShowcaseComponent } from './showcase/showcase.component';
     ReactiveFormsModule,
     IconsModule,
   ],
-  providers: [],
+  providers: [
+    DatePipe
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
