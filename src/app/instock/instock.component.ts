@@ -33,7 +33,7 @@ export class InstockComponent implements OnInit {
     price: new FormControl(0, [Validators.required]),
     category: new FormControl(0, [Validators.required]),
     // image: new FormControl('', [Validators.required]),
-    time: new FormControl(0, [Validators.required]),
+    mealTime: new FormControl(0, [Validators.required]),
     veg: new FormControl(this.isVeg, [Validators.required]),
     des: new FormControl('', [Validators.required]),
 
@@ -63,7 +63,7 @@ export class InstockComponent implements OnInit {
           // this.router.navigateByUrl('/instock');
           console.log("items fetched ");
           this.allItems = data.body['items'];
-          console.log(this.allItems);
+          // console.log(this.allItems);
 
         } else {
           // add a error message here
@@ -111,21 +111,31 @@ export class InstockComponent implements OnInit {
   // isVegetarian: boolean;
   // description: String;
   editItem(itemID) {
-    console.log(itemID);
-    console.log(this.name);
+    // console.log(itemID);
+    // console.log(this.name);
   }
 
 
+  // GET specific item to the edit form
+  getToEdit(item) {
+    // set edit form controllers
+    this.editItemForm.controls['name'].setValue(item.name);
+    this.editItemForm.controls['price'].setValue(item.price);
+    this.editItemForm.controls['category'].setValue(item.category);
+    this.editItemForm.controls['mealTime'].setValue(item.time);
+    this.editItemForm.controls['veg'].setValue(item.veg);
+    this.editItemForm.controls['des'].setValue(item.des);
+  }
 
 }
 
 export interface Item {
-  'id': number,
-  'name': string,
-  'price': number,
-  'category': number,
-  'time': number,
-  'image': string,
-  'veg': boolean,
-  'des': string,
+  'id': number;
+  'name': string;
+  'price': number;
+  'category': number;
+  'time': number;
+  'image': string;
+  'veg': boolean;
+  'des': string;
 }
