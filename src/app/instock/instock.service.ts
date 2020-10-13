@@ -50,17 +50,24 @@ export class InstockService {
   }
 
 
-  getAllItems(): Observable<Item[]> {
-    let allItems: Observable<Item[]>;
-
-    this.http.get('http://3.223.72.19/api/item/', { observe: 'response' }).subscribe({
+  editItem(id: string, item: Item,) {
+    this.http.patch('http://3.223.72.19/api/item/' + id, {
+      'id': id,
+      'name': item.name,
+      'price': item.price,
+      'category': item.category,
+      'image': "avcd",
+      'time': item.time,
+      'veg': item.veg,
+      'des': item.des,
+    }, { observe: 'response' }
+    ).subscribe({
       next: data => {
-        // console.log(data.body['items']);
+        console.log(data);
 
         if (data.status === 200) {
           // this.router.navigateByUrl('/instock');
-          console.log("items fetched ");
-          allItems = data.body['items'];
+          console.log("item edited successfully");
 
         } else {
           // add a error message here
@@ -77,7 +84,6 @@ export class InstockService {
     }
     );
 
-    return allItems;
 
   }
 }

@@ -122,7 +122,7 @@
                               <option value="2">Beverages</option>
                               <option value="3">Deserts</option>
                             </select>
-                            <select formControlName="mealTime" class="browser-default custom-select mb-4" id="select">
+                            <select formControlName="time" class="browser-default custom-select mb-4" id="select">
                               <option value="" disabled="" selected="">Menu time</option>
                               <option value="0">Breakfirst (till 11a.m)</option>
                               <option value="1">Lunch (11a.m-3p.m)</option>
@@ -130,13 +130,13 @@
                               <!-- <option value="3">All Day</option> -->
                             </select>
 
-                            <div class="input-group mb-4">
-                              <div class="custom-file">
+                            <!-- <div class="input-group mb-4"> -->
+                              <!-- <div class="custom-file">
                                 <input type="file" class="custom-file-input" id="fileInput" aria-describedby="fileInput"
                                   multiple>
                                 <label class="custom-file-label" for="fileInput">Select Images</label>
-                              </div>
-                            </div>
+                              </div> -->
+                            <!-- </div> -->
                             <div class="custom-control  custom-checkbox mb-3">
                               <input type="checkbox" formControlName="veg" class="custom-control-input"
                                 id="customControlValidation1" required>
@@ -145,7 +145,7 @@
                             <textarea id="textarea" formControlName="des" class="form-control mb-4"
                               placeholder="Description"></textarea>
                             <div class="modal-footer d-flex justify-content-center">
-                              <button mdbBtn color="warning" class="waves-light" mdbWavesEffect
+                              <button mdbBtn color="warning" class="waves-light" mdbWavesEffect [disabled] = "!editItemForm.valid"
                                 (click)="editItem(item.id)">Save Item</button>
                             </div>
                           </form>

@@ -33,7 +33,7 @@ export class InstockComponent implements OnInit {
     price: new FormControl(0, [Validators.required]),
     category: new FormControl(0, [Validators.required]),
     // image: new FormControl('', [Validators.required]),
-    mealTime: new FormControl(0, [Validators.required]),
+    time: new FormControl(0, [Validators.required]),
     veg: new FormControl(this.isVeg, [Validators.required]),
     des: new FormControl('', [Validators.required]),
 
@@ -113,6 +113,8 @@ export class InstockComponent implements OnInit {
   editItem(itemID) {
     // console.log(itemID);
     // console.log(this.name);
+    console.log(this.editItemForm.value);
+    this.instockService.editItem(itemID, this.editItemForm.value);
   }
 
 
@@ -122,9 +124,11 @@ export class InstockComponent implements OnInit {
     this.editItemForm.controls['name'].setValue(item.name);
     this.editItemForm.controls['price'].setValue(item.price);
     this.editItemForm.controls['category'].setValue(item.category);
-    this.editItemForm.controls['mealTime'].setValue(item.time);
+    this.editItemForm.controls['time'].setValue(item.time);
     this.editItemForm.controls['veg'].setValue(item.veg);
     this.editItemForm.controls['des'].setValue(item.des);
+
+    console.log(item);
   }
 
 }
