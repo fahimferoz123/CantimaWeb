@@ -63,102 +63,105 @@
 
 
             <!-- example lines -->
-            <tr>
-              <td>123456</td>
-              <td>Rolls</td>
-              <td>Rs 30.00</td>
-              <td>
-
-                <label class="switch">
-                  <input type="checkbox" checked>
-                  <span class="slider round"></span>
-                  <span class="absolute-no">NO</span>
-                </label>
-
-              </td>
-              <td>90%</td>
-              <td>23/80</td>
-              <td>
-                <span class="table-edit">
-
-
-                  <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="relative waves-light"
-                    (click)="editModal.show()" mdbWavesEffect>Edit</button>
-                  <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="my-0">
-                    <mdb-icon fas icon="trash"></mdb-icon>
-                  </button>
-
-                  <div mdbModal #editModal="mdbModal" class="modal fade right" id="frameModalTop" tabindex="-1"
-                    role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-full-height modal-right" role="document">
-                      <div class="modal-content">
-                        <div class="modal-header text-center">
-                          <button type="button" class="close pull-right" aria-label="Close" (click)="editModal.hide()">
-                            <span aria-hidden="true">×</span>
-                          </button>
-
-                          <h4 class="modal-title w-100 font-weight-bold">Edit Item</h4>
-
-                        </div>
-
-                        <div class="modal-body mx-3">
-                          <form class="border border-0 p-4" id="add-item">
-
-                            <div>
-                              <input type="text" id="textInput" class="form-control mb-4" placeholder="Product Name">
-                            </div>
-                            <div class="input-group mb-2 mr-sm-2">
-                              <div class="input-group-prepend">
-                                <div class="input-group-text">Rs.</div>
+            <!-- <div *ngFor="let item of allItems">  -->
+              <tr *ngFor="let item of allItems">
+                <td>{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td>Rs {{item.price}}</td>
+                <td>
+  
+                  <label class="switch">
+                    <input type="checkbox" checked>
+                    <span class="slider round"></span>
+                    <span class="absolute-no">NO</span>
+                  </label>
+  
+                </td>
+                <td>90%</td>
+                <td>23/80</td>
+                <td>
+                  <span class="table-edit">
+  
+  
+                    <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="relative waves-light"
+                      (click)="editModal.show()" mdbWavesEffect>Edit</button>
+                    <button type="button" mdbBtn color="danger" rounded="true" size="sm" class="my-0">
+                      <mdb-icon fas icon="trash"></mdb-icon>
+                    </button>
+  
+                    <div mdbModal #editModal="mdbModal" class="modal fade right" id="frameModalTop" tabindex="-1"
+                      role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-full-height modal-right" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header text-center">
+                            <button type="button" class="close pull-right" aria-label="Close" (click)="editModal.hide()">
+                              <span aria-hidden="true">×</span>
+                            </button>
+  
+                            <h4 class="modal-title w-100 font-weight-bold">Edit Item</h4>
+  
+                          </div>
+  
+                          <div class="modal-body mx-3">
+                            <form class="border border-0 p-4" id="add-item">
+  
+                              <div>
+                                <input type="text" id="textInput" class="form-control mb-4" placeholder="Product Name">
                               </div>
-                              <input mdbInput type="number" class="form-control py-0" min="1" id="price"
-                                placeholder="Price">
-                            </div>
-
-                            <select class="browser-default custom-select mb-4" id="select">
-                              <option value="" disabled="" selected="">Choose the category</option>
-                              <option value="1">Short Eats</option>
-                              <option value="2">Rice & Curry</option>
-                              <option value="3">Beverages</option>
-                              <option value="3">Deserts</option>
-                            </select>
-                            <select class="browser-default custom-select mb-4" id="select">
-                              <option value="" disabled="" selected="">Menu time</option>
-                              <option value="1">Breakfirst (till 11a.m)</option>
-                              <option value="2">Lunch (11a.m-3p.m)</option>
-                              <option value="3">Evening (after 3p.m)</option>
-                              <option value="3">All Day</option>
-                            </select>
-
-                            <div class="input-group mb-4">
-                              <div class="custom-file">
-                                <input type="file" class="custom-file-input" id="fileInput" aria-describedby="fileInput"
-                                  multiple>
-                                <label class="custom-file-label" for="fileInput">Select Images</label>
+                              <div class="input-group mb-2 mr-sm-2">
+                                <div class="input-group-prepend">
+                                  <div class="input-group-text">Rs.</div>
+                                </div>
+                                <input mdbInput type="number" class="form-control py-0" min="1" id="price"
+                                  placeholder="Price">
                               </div>
-                            </div>
-
-
-                            <div class="custom-control custom-checkbox mb-3">
-                              <input type="checkbox" class="custom-control-input" id="customControlValidation1"
-                                required>
-                              <label class="custom-control-label" for="customControlValidation1">Vegetarian</label>
-                            </div>
-
-                            <textarea id="textarea" class="form-control mb-4" placeholder="Description"></textarea>
-
-                          </form>
-                        </div>
-
-                        <div class="modal-footer d-flex justify-content-center">
-                          <button mdbBtn color="warning" class="waves-light" mdbWavesEffect>Save Item</button>
+  
+                              <select class="browser-default custom-select mb-4" id="select">
+                                <option value="" disabled="" selected="">Choose the category</option>
+                                <option value="1">Short Eats</option>
+                                <option value="2">Rice & Curry</option>
+                                <option value="3">Beverages</option>
+                                <option value="3">Deserts</option>
+                              </select>
+                              <select class="browser-default custom-select mb-4" id="select">
+                                <option value="" disabled="" selected="">Menu time</option>
+                                <option value="1">Breakfirst (till 11a.m)</option>
+                                <option value="2">Lunch (11a.m-3p.m)</option>
+                                <option value="3">Evening (after 3p.m)</option>
+                                <option value="3">All Day</option>
+                              </select>
+  
+                              <div class="input-group mb-4">
+                                <div class="custom-file">
+                                  <input type="file" class="custom-file-input" id="fileInput" aria-describedby="fileInput"
+                                    multiple>
+                                  <label class="custom-file-label" for="fileInput">Select Images</label>
+                                </div>
+                              </div>
+  
+  
+                              <div class="custom-control custom-checkbox mb-3">
+                                <input type="checkbox" class="custom-control-input" id="customControlValidation1"
+                                  required>
+                                <label class="custom-control-label" for="customControlValidation1">Vegetarian</label>
+                              </div>
+  
+                              <textarea id="textarea" class="form-control mb-4" placeholder="Description"></textarea>
+  
+                            </form>
+                          </div>
+  
+                          <div class="modal-footer d-flex justify-content-center">
+                            <button mdbBtn color="warning" class="waves-light" mdbWavesEffect>Save Item</button>
+                          </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </span>
-              </td>
-            </tr>
+                  </span>
+                </td>
+              </tr>
+
+            <!-- </div> -->
           </thead>
         </table>
       </div>
