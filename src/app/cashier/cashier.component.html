@@ -19,29 +19,29 @@
                   <div class="col-lg-4 col-md-4">
                       <form class="form-inline waves-light" mdbWavesEffect>
                           <div class="md-form my-0">
-                              <input class="form-control mr-sm-2" type="text" placeholder="Enter Order Id">
+                              <input class="form-control mr-sm-2" type="text" placeholder="Enter Order Id" name ="orderid" [(ngModel)]="orderId">
                           </div>
-                      <button type="button" mdbBtn color="warning" style="padding: 10px; box-shadow: none; box-sizing: initial;" mdbWavesEffect><mdb-icon fas icon="cash-register" size="1.5x" ></mdb-icon></button> 
+                      <button (click)="getOrderDetails()" type="button" mdbBtn color="warning" style="padding: 10px; box-shadow: none; box-sizing: initial;" mdbWavesEffect><mdb-icon fas icon="cash-register" size="1.5x" ></mdb-icon></button> 
                       </form>
                   </div>
                 
 
-                    
+<!--                     
                     <div class="col-md-2">              
-                      <h6>Order Num : *******</h6>
-                    </div>
+                      <h6>Order Num :{{orderId}}</h6>
+                    </div> -->
                     
-                    <div class="col-md-2">              
-                      <h6>User ID: *******</h6>
+                    <div  style="margin-right: 20px;">              
+                      <h6>User ID: {{userid}}</h6>
                     </div>
 
-                    <div class="col-md-2">              
-                      <h6>Time: *******</h6>
+                    <div >              
+                      <h6>Time: {{time}}</h6>
                     </div>
 
-                    <div class="col-md-2">              
+                    <!-- <div class="col-md-2">              
                       <h6>CC : ****</h6>
-                    </div>
+                    </div> -->
                   
               </div>
                   
@@ -63,20 +63,14 @@
                       
     
                         <!-- example lines -->
-                        <tr>
-                            <td>Sausage Bun</td>
-                            <td>1345</td>
-                            <td>2</td>
-                            <td>Rs 40.00</td>
-                            <td>Rs 80.00</td>                                                   
+                        <tr *ngFor="let item of allitems">
+                            <td>{{item['itemName']}}</td>
+                            <td>{{item['id']}}</td>
+                            <td>{{item['qty']}}</td>
+                            <td>{{item['price']}}</td>
+                            <td>Rs {{item['qty']* item['price'] }} </td>                                                   
                         </tr> 
-                        <tr>
-                          <td>Cream Bun</td>
-                          <td>1355</td>
-                          <td>2</td>
-                          <td>Rs 30.00</td>
-                          <td>Rs 60.00</td>                                                   
-                      </tr>                   
+                                        
                     </thead>                                      
                   </table>  
                   
@@ -86,7 +80,7 @@
 
                   <div class="row justify-content-end">
                     <div class="col-md-2">
-                      <h6><b>Total: Rs 40.00</b></h6>
+                      <h6><b>Total: Rs {{total}}</b></h6>
                     </div>
                   </div>
                   <br>
