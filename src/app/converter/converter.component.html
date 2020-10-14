@@ -172,14 +172,14 @@
                 <form class="border border-0 p-4" id="add-item">
                 
                     <div>                       
-                        <input type="text" id="textInput" class="form-control mb-4" placeholder="UserID">
+                        <input type="text" id="textInput" class="form-control mb-4" placeholder="UserID" [(ngModel)]="userId" name="userid">
                     </div>
                     
                     <div class="input-group mb-2 mr-sm-2">
                     <div class="input-group-prepend">
                         <div class="input-group-text">Rs.</div>
                     </div>
-                    <input mdbInput type="number" class="form-control py-0" min="1" id="price"  placeholder="Amount">
+                    <input mdbInput type="number" class="form-control py-0" min="1" id="price"  placeholder="Amount" [(ngModel)]="amount" name="amount" >
                     </div>
                       
                 
@@ -192,7 +192,7 @@
         
     
             <div class="modal-footer d-flex justify-content-center">
-                <button mdbBtn color="warning" class="waves-light " (click)="confirmModal.show()" mdbWavesEffect>Confirm</button>
+                <button mdbBtn color="warning" class="waves-light " (click)="confirmModal.show()" mdbWavesEffect [disabled] = "userId == '' || amount == 0" >Confirm</button>
           </div>
         </div>
       </div>
@@ -210,17 +210,17 @@
               <h4 class="modal-title text-center w-100" id="myModalLabel">Confirm Convertion</h4>
             </div>
             <div class="modal-body text-center">
-               An amount of ***** credits will be added to the account :
+               An amount of {{amount}} credits will be added to the account :
               <br> 
-              UserID: ******
+              UserID: {{userId}}
               <br>
-              Name: ****** 
+              <!-- Name: ******  -->
               <br> 
               Please verify above details before confirming.
             </div>
             <div class="modal-footer justify-content-center">
               <button type="button" mdbBtn color="danger" class="waves-light" aria-label="Close" (click)="confirmModal.hide()" mdbWavesEffect>Cancel</button>
-              <button type="button" mdbBtn color="success" class="relative waves-light" (click)="confirmModal.hide() ; frame.hide()" mdbWavesEffect>Confirm</button>
+              <button type="button" mdbBtn color="success" class="relative waves-light" (click)="addCredits() ; frame.hide()" mdbWavesEffect>Confirm</button>
             </div>
           </div>
         </div>
